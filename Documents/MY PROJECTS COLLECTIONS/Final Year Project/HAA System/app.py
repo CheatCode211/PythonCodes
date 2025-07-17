@@ -11,10 +11,10 @@ warnings.filterwarnings('ignore')
 # Add src directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-from gradio_app import create_app
+from src.gradio_app import create_app
 
 # Create the Gradio interface
-demo = create_app()
+app = create_app()
 
 if __name__ == "__main__":
     # Launch the app
