@@ -2,23 +2,25 @@
 Main application file 
 This file is used for HuggingFace Spaces deployment
 """
+"""
+Main application file 
+This file is used for HuggingFace Spaces deployment
+"""
 
 import os
 import sys
 import warnings
 warnings.filterwarnings('ignore')
 
-# Add src directory to path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+sys.path.append(os.path.dirname(__file__))  # Ensure current folder is importable
 
-from src.gradio_app import create_app
+from gradio_app import create_app  # gradio_app.py must be in the same directory
 
 # Create the Gradio interface
 app = create_app()
 
 if __name__ == "__main__":
-    # Launch the app
-    demo.launch(
+    app.launch(
         server_name="0.0.0.0",
         server_port=7860,
         share=True,
